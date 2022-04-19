@@ -1,30 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import {fetchProviders, fetchProvider} from "./api";
+import { fetchProviders, fetchProvider } from "./api";
+import "./App.scss";
 
 function App() {
   // Samples of API requests
-  fetchProviders().then(console.log)
-  fetchProvider("1").then(console.log)
+  fetchProviders().then(console.log);
+  fetchProvider("1").then(console.log);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div className="App">clean!</div>;
 }
 
 export default App;
