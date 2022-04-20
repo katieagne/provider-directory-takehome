@@ -10,14 +10,14 @@ function App() {
   fetchProvider("1").then(console.log);
 
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<BrowseProviders />} />
           <Route path=":providerId" element={<ProviderProfile />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
