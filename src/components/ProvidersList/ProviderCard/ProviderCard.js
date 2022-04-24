@@ -22,7 +22,7 @@ export default function ProviderCard({ provider }) {
         </div>
       </div>
       <p className="card__bio">{bio}</p>
-      <p className="card__availability-badge">{availabilty}</p>
+      <p className="card__availability-badge">{`Available ${availabilty}`}</p>
     </div>
   );
 }

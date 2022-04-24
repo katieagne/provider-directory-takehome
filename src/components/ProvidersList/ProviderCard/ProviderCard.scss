@@ -47,7 +47,6 @@
   &__availability-badge {
     @include badge-2;
     width: fit-content;
-    text-transform: capitalize;
     padding: 6px 12px;
     background-color: #eff1fe;
     border-radius: 200px;

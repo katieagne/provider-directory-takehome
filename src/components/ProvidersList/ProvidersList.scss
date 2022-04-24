@@ -10,7 +10,9 @@
     @include label-3;
   }
   &__link {
+    outline: none;
     text-decoration: none;
+    width: 598px;
     cursor: pointer;
   }
 }

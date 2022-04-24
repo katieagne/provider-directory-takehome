@@ -15,7 +15,7 @@
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.05);
   }
   &__top-container {
-    max-width: 534px;
+    width: 534px;
   }
   &__top-heading {
     @include subheader-3;

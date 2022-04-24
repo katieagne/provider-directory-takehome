@@ -3,6 +3,10 @@ import "./ProviderProfile.scss";
 import { useState } from "react";
 import { fetchProvider } from "../../api";
 import { useParams } from "react-router-dom";
+import arrow from "../../assets/icons/chevron.svg";
+import map from "../../assets/icons/location.svg";
+import edu from "../../assets/icons/edu.svg";
+import lang from "../../assets/icons/lang.svg";
 
 export default function ProviderProfile() {
   // Access URL id param
@@ -42,25 +46,15 @@ export default function ProviderProfile() {
       .catch((e) => console.log(e));
   }
 
-  const {
-    name,
-    title,
-    bio,
-    availabilty,
-    id,
-    occupation,
-    education,
-    location,
-    languages,
-  } = provider;
+  const { name, title, bio, occupation, education, location, languages } =
+    provider;
   return (
     <main className="profile">
       <div className="profile__container">
         <p className="profile__breadcrumb">
           Mental Wellness
-          <span className="profile__provider">
-            {name}, {title}
-          </span>
+          <img className="profile__breadcrumb-icon" src={arrow} />
+          <span className="profile__provider">{`${name}, ${title}`}</span>
         </p>
         <div className="profile__wrapper">
           <img
@@ -72,24 +66,25 @@ export default function ProviderProfile() {
             <h3 className="profile__name">{name}</h3>
             <p className="profile__occupation">{occupation}</p>
             <div className="profile__bio-container">
+              {/* TODO: readmore functionality */}
               <p className="profile__bio">{bio}</p>
             </div>
             <div className="profile__details">
-              <img className="profile__icon" src="" />
+              <img className="profile__icon" src={map} />
               <div className="profile__details-container">
                 <p className="profile__label">Location</p>
                 <p className="profile__data">{location}</p>
               </div>
             </div>
             <div className="profile__details">
-              <img className="profile__icon" src="" />
+              <img className="profile__icon" src={edu} />
               <div className="profile__details-container">
                 <p className="profile__label">Education</p>
                 <p className="profile__data">{education}</p>
               </div>
             </div>
             <div className="profile__details">
-              <img className="profile__icon" src="" />
+              <img className="profile__icon" src={lang} />
               <div className="profile__details-container">
                 <p className="profile__label">Language</p>
                 <p className="profile__data">{languages}</p>
