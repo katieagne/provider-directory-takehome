@@ -1,8 +1,26 @@
 import React from "react";
 import "./BrowseProviders.scss";
+import { useState, useEffect } from "react";
+import { fetchProvider, fetchProviders } from "../../api";
 import pin from "../../assets/icons/pin.svg";
+import ProvidersList from "../../components/ProvidersList/ProvidersList";
 
 export default function BrowseProviders() {
+  const [providerName, setProviderName] = useState("");
+  const [providers, setProviders] = useState([]);
+
+  useEffect(() => {
+    fetchProvider("1").then((provider) => {
+      setProviderName(provider.name);
+    });
+  }, [providerName]);
+
+  useEffect(() => {
+    fetchProviders().then((providers) => {
+      setProviders(providers);
+    });
+  }, [providers]);
+
   return (
     <main className="browse-providers">
       <section className="browse-providers__top-wrapper">
@@ -21,7 +39,9 @@ export default function BrowseProviders() {
           </div>
         </div>
       </section>
-      <section className="browse-providers__provider-list"></section>
+      <section className="browse-providers__provider-list">
+        <ProvidersList providerName={providerName} providers={providers} />
+      </section>
     </main>
   );
 }

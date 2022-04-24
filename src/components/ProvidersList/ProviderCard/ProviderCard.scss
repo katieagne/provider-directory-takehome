@@ -1,0 +1,55 @@
+@import "../../../partials/mixins";
+@import "../../../partials/colors";
+
+.card {
+  width: 598px;
+  background-color: $background-alt;
+  padding: 14px 16px;
+  margin: 6px 0;
+
+  &__meta {
+    @include flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__img {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    margin-right: 12px;
+    object-fit: cover;
+    object-position: 50%;
+    border-radius: 100%;
+    border: 1px solid $light-border;
+  }
+  &__meta {
+    margin-bottom: 10px;
+  }
+  &__name {
+    @include label-5;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+  }
+  &__title {
+    @include input-1;
+    text-transform: capitalize;
+  }
+  &__bio {
+    @include body-3;
+    margin-bottom: 12px;
+    height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+  &__availability-badge {
+    @include badge-2;
+    width: fit-content;
+    text-transform: capitalize;
+    padding: 6px 12px;
+    background-color: #eff1fe;
+    border-radius: 200px;
+  }
+}
