@@ -37,4 +37,9 @@
   &__top-location {
     @include label-3;
   }
+
+  &__provider-list {
+    @include flex;
+    justify-content: center;
+  }
 }

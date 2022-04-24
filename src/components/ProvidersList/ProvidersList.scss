@@ -1,0 +1,15 @@
+@import "../../partials/mixins";
+@import "../../partials/colors";
+
+.providers {
+  &__count {
+    @include input-2;
+    padding: 19px 0 16px 0;
+  }
+  &__number {
+    @include label-3;
+  }
+  &__link {
+    text-decoration: none;
+  }
+}

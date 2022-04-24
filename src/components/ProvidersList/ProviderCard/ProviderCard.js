@@ -4,7 +4,7 @@ import "./ProviderCard.scss";
 // import { fetchProviders, fetchProvider } from "../../../api";
 
 export default function ProviderCard({ provider }) {
-  const { name, title, bio, availabilty, id, occupation } = provider;
+  const { name, title, bio, availabilty, occupation } = provider;
 
   return (
     <div className="card">

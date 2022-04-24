@@ -1,20 +1,31 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { fetchProviders, fetchProvider } from "./api";
+import { useState, useEffect } from "react";
+import { fetchProviders } from "./api";
 import "./App.scss";
 import BrowseProviders from "./pages/BrowseProviders/BrowseProviders";
 import ProviderProfile from "./pages/ProviderProfile/ProviderProfile";
 
 function App() {
   // Samples of API requests
-  fetchProviders().then(console.log);
-  fetchProvider("1").then(console.log);
+  // fetchProviders().then(console.log);
+  // fetchProvider("1").then(console.log);
+
+  // Set state for list of providers
+  const [providers, setProviders] = useState([]);
+
+  // Update state of list of providets
+  useEffect(() => {
+    fetchProviders().then((providers) => {
+      setProviders(providers);
+    });
+  }, [providers]);
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<BrowseProviders />} />
-          <Route path=":providerId" element={<ProviderProfile />} />
+          <Route path="/" element={<BrowseProviders providers={providers} />} />
+          <Route path="/provider/:providerId" element={<ProviderProfile />} />
         </Routes>
       </BrowserRouter>
     </>
