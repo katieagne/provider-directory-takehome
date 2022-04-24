@@ -1,2 +1,34 @@
 @import "../../partials/mixins";
 @import "../../partials/colors";
+
+.profile {
+  @include flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $background;
+  // &__container {
+  //   max-width: 804px;
+  // }
+  &__breadcrumb {
+    padding: 24px 0;
+  }
+  &__wrapper {
+    @include flex;
+  }
+  &__img {
+    width: 289px;
+    height: 289px;
+    object-fit: cover;
+    object-position: 50%;
+    margin-right: 20px;
+  }
+  &__info {
+    width: 495px;
+    background-color: $background-alt;
+    padding: 32px 24px;
+  }
+  &__cta {
+    @include book-cta;
+  }
+}

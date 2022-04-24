@@ -6,10 +6,6 @@ import BrowseProviders from "./pages/BrowseProviders/BrowseProviders";
 import ProviderProfile from "./pages/ProviderProfile/ProviderProfile";
 
 function App() {
-  // Samples of API requests
-  // fetchProviders().then(console.log);
-  // fetchProvider("1").then(console.log);
-
   // Set state for list of providers
   const [providers, setProviders] = useState([]);
 
