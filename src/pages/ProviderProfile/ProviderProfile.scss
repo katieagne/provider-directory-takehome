@@ -14,6 +14,11 @@
     @include input-1;
     padding: 24px 0;
   }
+  &__breadcrumb-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
   &__breadcrumb-icon {
     padding: 0 8px;
   }
@@ -51,6 +56,28 @@
   }
   &__bio {
     @include body-3;
+    transition: all 0.5s;
+  }
+  &__bio-truncated {
+    @extend .profile__bio;
+    // max-height: calc(20px * 5);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+  &__read-more {
+    @include label-4;
+    cursor: pointer;
+    color: #6277f0;
+    margin-top: 16px;
+    display: block;
+    transition: color 0.5s;
+
+    &:hover {
+      color: #d0d6fb;
+    }
   }
   &__details {
     @include flex;

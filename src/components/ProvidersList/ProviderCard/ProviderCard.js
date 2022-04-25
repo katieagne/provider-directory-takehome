@@ -1,7 +1,5 @@
 import React from "react";
 import "./ProviderCard.scss";
-// import { useState, useEffect } from "react";
-// import { fetchProviders, fetchProvider } from "../../../api";
 
 export default function ProviderCard({ provider }) {
   const { name, title, bio, availabilty, occupation } = provider;
@@ -22,6 +20,7 @@ export default function ProviderCard({ provider }) {
         </div>
       </div>
       <p className="card__bio">{bio}</p>
+
       <p className="card__availability-badge">{`Available ${availabilty}`}</p>
     </div>
   );
