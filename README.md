@@ -5,7 +5,7 @@
 **Configure**
 
 - In Terminal, navigate to the directory you want the clone to live
-- run `git clone git@github.com:katieagne/rallybc.git`
+- run `git@github.com:katieagne/provider-directory-takehome.git`
 - `cd` into `provider-directory-takehome`
 - run `npm i` to install dependencies
 - run `npm start` to start the project
