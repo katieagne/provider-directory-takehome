@@ -34,6 +34,7 @@ export default function ProviderProfile() {
     fetchProvider("3")
       .then((provider) => {
         setProvider(provider);
+        // console.log(provider.languages);
       })
       .catch((e) => console.log(e));
   }
@@ -47,6 +48,13 @@ export default function ProviderProfile() {
 
   const { name, title, bio, occupation, education, location, languages } =
     provider;
+
+  function displayAllLanguages() {
+    if (languages && languages.length > 1) {
+      return languages.join(", ");
+    }
+    return languages;
+  }
 
   if (provider) {
     return (
@@ -113,7 +121,7 @@ export default function ProviderProfile() {
                 />
                 <div className="profile__details-container">
                   <p className="profile__label">Language</p>
-                  <p className="profile__data">{languages}</p>
+                  <p className="profile__data">{displayAllLanguages()}</p>
                 </div>
               </div>
               <button
