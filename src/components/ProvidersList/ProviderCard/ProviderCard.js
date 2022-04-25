@@ -8,7 +8,7 @@ export default function ProviderCard({ provider }) {
   return (
     <div className="card">
       <div className="card__meta">
-        <img className="card__img" src={stock} alt="profile photo" />
+        <img className="card__img" src={stock} alt="provider" />
         <div className="card__titles-container">
           <h3 className="card__name">
             {name}, {title}

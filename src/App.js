@@ -11,8 +11,9 @@ function App() {
 
   // Update state of list of providets
   useEffect(() => {
+    let isMounted = true;
     fetchProviders().then((providers) => {
-      setProviders(providers);
+      if (isMounted) setProviders(providers);
     });
   }, [providers]);
 

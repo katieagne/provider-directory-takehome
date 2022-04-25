@@ -45,16 +45,8 @@ export default function ProviderProfile() {
       .catch((e) => console.log(e));
   }
 
-  const {
-    name,
-    title,
-    bio,
-    occupation,
-    education,
-    location,
-    languages,
-    avatarUrl,
-  } = provider;
+  const { name, title, bio, occupation, education, location, languages } =
+    provider;
 
   if (provider) {
     return (
@@ -72,7 +64,7 @@ export default function ProviderProfile() {
             <span className="profile__provider">{`${name}, ${title}`}</span>
           </p>
           <div className="profile__wrapper">
-            <img className="profile__img" src={stock} alt="profile photo" />
+            <img className="profile__img" src={stock} alt="provider" />
             <div className="profile__info">
               <h3 className="profile__name">{name}</h3>
               <p className="profile__occupation">{occupation}</p>
