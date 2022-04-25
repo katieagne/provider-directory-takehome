@@ -11,10 +11,13 @@ function App() {
 
   // Update state of list of providets
   useEffect(() => {
-    let isMounted = true;
+    let mounted = true;
     fetchProviders().then((providers) => {
-      if (isMounted) setProviders(providers);
+      if (mounted) setProviders(providers);
     });
+    return () => {
+      mounted = false;
+    };
   }, [providers]);
 
   return (
