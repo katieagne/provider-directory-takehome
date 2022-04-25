@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProviderCard.scss";
+import stock from "../../../assets/img/stock.png";
 
 export default function ProviderCard({ provider }) {
   const { name, title, bio, availabilty, occupation } = provider;
@@ -7,11 +8,7 @@ export default function ProviderCard({ provider }) {
   return (
     <div className="card">
       <div className="card__meta">
-        <img
-          className="card__img"
-          src="https://images.unsplash.com/photo-1600077106724-946750eeaf3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-          alt="corgi"
-        />
+        <img className="card__img" src={stock} alt="profile photo" />
         <div className="card__titles-container">
           <h3 className="card__name">
             {name}, {title}

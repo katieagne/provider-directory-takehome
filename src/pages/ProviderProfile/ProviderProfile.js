@@ -8,6 +8,7 @@ import map from "../../assets/icons/location.svg";
 import world from "../../assets/icons/world.svg";
 import edu from "../../assets/icons/edu.svg";
 import { Link } from "react-router-dom";
+import stock from "../../assets/img/stock.png";
 import Loader from "../../components/Loader/Loader";
 
 export default function ProviderProfile() {
@@ -44,8 +45,16 @@ export default function ProviderProfile() {
       .catch((e) => console.log(e));
   }
 
-  const { name, title, bio, occupation, education, location, languages } =
-    provider;
+  const {
+    name,
+    title,
+    bio,
+    occupation,
+    education,
+    location,
+    languages,
+    avatarUrl,
+  } = provider;
 
   if (provider) {
     return (
@@ -63,11 +72,7 @@ export default function ProviderProfile() {
             <span className="profile__provider">{`${name}, ${title}`}</span>
           </p>
           <div className="profile__wrapper">
-            <img
-              className="profile__img"
-              src="https://images.unsplash.com/photo-1600077106724-946750eeaf3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-              alt="corgi"
-            />
+            <img className="profile__img" src={stock} alt="profile photo" />
             <div className="profile__info">
               <h3 className="profile__name">{name}</h3>
               <p className="profile__occupation">{occupation}</p>
